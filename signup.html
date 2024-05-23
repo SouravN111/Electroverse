@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Blurred Background image in CSS 
+	</title> 
+    <link rel="stylesheet" href="signin.css">
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+</head> 
+	
+<body> 
+	<div class="background"></div>
+    <center>
+        <div class="login-container">
+            <form action="signup.php" method="post" id="signupForm">
+                <h2 style="color: white;">Register</h2>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
+                <button type="submit">Signup</button>
+                <br>
+                <br>
+                <br>
+                <a href="login.html" style="text-decoration: none; color: white;">Have an account?</a>
+            </form> 
+          </div> 
+    </center> 
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please enter the same password in both fields.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body> 
+</html>

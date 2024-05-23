@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <title>Admin Dashboard</title>
+    <style>
+        /* CSS for the aside bar */
+        .aside {
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .aside button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: white;
+            font-size: 18px;
+        }
+        .aside button:hover {
+            background-color: #45a049;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            margin-left: 20%; /* Adjust based on the width of the aside bar */
+            box-sizing: border-box;
+        }
+
+        /* Style for delete button */
+        .delete-user {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-user:hover {
+            background-color: #d32f2f;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .blacklist-user {
+    background-color: #FF9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blacklist-user:hover {
+    background-color: #f57c00;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar1">
+        <a href="#" class="logo">Electroverse</a>
+        <div class="categories">
+            <!-- <a href="#">Categories</a> -->
+            <div class="categories-content">
+                <a href="#">Category 1</a>
+                <a href="#">Category 2</a>
+                <a href="#">Category 3</a>
+            </div>
+        </div>
+        <div class="search">
+        <input type="text" placeholder="Search..." id="searchInput">
+        <div id="search-icon">&#128269;</div>
+    </div>
+        <div class="contact">
+            <div class="contact-icon">&#9742;</div>
+            <div>+919913470609</div>
+            <div class="contact-icon">&#9993;</div>
+            <div>raketyler12@gmail.com</div>
+        </div>
+    </div>
+    
+    <!-- Navbar 2 -->
+    <div class="navbar2">
+        <div class="nav-items">
+            <a href="index.php" class="home">Home</a>
+            <a href="index.php">Products</a>
+        </div>
+        <div class="nav-items">
+            <a href="login.html" class="account">Account</a>
+            <a href="#" class="cart">&#128722;</a>
+        </div>
+    </div>
+<div class="container">
+    <!-- Aside bar -->
+    <div class="aside">
+        <button onclick="loadContent('edit_product.php')">Add, edit and delete products</button>
+        <button onclick="loadContent('order_managment.php')">View and manage all orders</button>
+        <button onclick="loadContent('customer_management.php')">View and manage all customers</button>
+        <button onclick="loadContent('reports.php')">Download reports</button>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Content loaded dynamically here -->
+        <div id="dynamic-content">
+            <!-- Placeholder content -->
+            <h2>Welcome to Admin Dashboard!</h2>
+            <p>Please select an option from the sidebar.</p>
+        </div>
+    </div>
+</div>
+
+<script> 
+function loadContent(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('dynamic-content').innerHTML = data;
+            // Bind event listeners after loading content
+            bindEventListeners();
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Function to bind event listeners for dynamically loaded content
+function bindEventListeners() {
+    // Add event listener to delete buttons
+    const deleteButtons = document.querySelectorAll('.delete-user');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const userId = this.getAttribute('data-userid');
+            deleteUser(userId);
+        });
+    });
+}
+
+function deleteUser(userId) {
+    // Send a POST request to the server to delete the user with the given ID
+    fetch('customer_management.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `userId=${userId}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Reload the content
+        loadContent('customer_management.php');
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Initial load of content
+loadContent('customer_management.php');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <title>index</title>
+</head>
+<body >
+
+<!-- Navbar 1 -->
+<div class="navbar1">
+    <a href="#" class="logo">Electroverse</a>
+    <div class="categories">
+        <!-- <a href="#">Categories</a> -->
+        <div class="categories-content">
+            <a href="#">Category 1</a>
+            <a href="#">Category 2</a>
+            <a href="#">Category 3</a>
+        </div>
+    </div>
+    <div class="search">
+    <input type="text" placeholder="Search..." id="searchInput">
+    <div id="search-icon">&#128269;</div>
+</div>
+    <div class="contact">
+        <div class="contact-icon">&#9742;</div>
+        <div>+919913470609</div>
+        <div class="contact-icon">&#9993;</div>
+        <div>raketyler12@gmail.com</div>
+    </div>
+</div>
+
+<!-- Navbar 2 -->
+<div class="navbar2">
+    <div class="nav-items">
+        <a href="index.php" class="home">Home</a>
+        <a href="index.php">Products</a>
+    </div>
+    <div class="nav-items">
+        <a href="dasboard.php" class="account">Dasboard</a>
+        <a href="cart.php" class="cart">&#128722;</a>
+    </div>
+</div>
+
+    </header>
+    <main>
+            <div id="products">
+                 <div id="whole-product-image">
+                    <img src="img/amazon_tripod_1.webp" alt="boat earphone" id="product-image">
+                </div>
+                <div id="whole-product-information">
+                    <b id="product-name">Amazon Basics Gorilla Tripod/Mini Tripod for Mobile Phone with Phone Mount with Flexible Gorilla Stand for DSLR, Action Cameras, Ring Lights, Panel Reflectors, Umbrellas, and Flashlights (13 Inch)</b>
+
+                    <br>
+                    <a href="" id="stores">visit the AMAZON store</a>
+                    <br>
+                    <br>
+                <div id="price-rates">
+                    <p id="discounted">-65%</p>
+                    <p id="product-rate"><sup>₹</sup>220</p>
+                    <br>
+                    <br> 
+                </div>
+                <!-- <h2>ratings</h2>
+                <br>
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>&nbsp;<b>4 stars</b>
+                <br>
+                <br> -->
+                <div id="buying"> 
+                    <form id="productForm" method="post" action="addToCart.php">
+                        <input type="hidden" name="productName" id="productName" value="Amazon Basics Gorilla Tripod/Mini Tripod for Mobile Phone with Phone Mount with Flexible Gorilla Stand for DSLR, Action Cameras, Ring Lights, Panel Reflectors, Umbrellas, and Flashlights (13 Inch)">
+                        <input type="hidden" name="productPrice" id="productPrice" value="220">
+                        <input type="hidden" name="productImage" id="productImage" value="img/amazon_tripod_1.webp"> <!-- Add this line -->
+                        <button type="submit" id="buy-button">Add to Cart</button>
+                    </form>
+                    
+                </div>
+                <br>
+                <br>
+                <table>
+                    <th>Brand</th>	
+                    <td>amazon basics</td>
+                    <tr></tr>
+                        <th>Colour</th> 
+                        <td>Black & white</td>
+                        <tr></tr>
+                        <th>Compatible Devices</th>	
+                        <td>Camera, Smartphone</td>
+                        <tr></tr>
+                        <th>Special Feature&nbsp;&nbsp;</th>	
+                        <td>Lightweight</td>
+                        <tr></tr>
+                        <th>Material&nbsp;&nbsp;</th>	
+                        <td>Plastic</td>
+                </table>
+                <br>
+                <br>
+                </div>
+            
+            </div>
+            <center>
+            <div id="about-this-item">
+                <h2 id="this-item">About this item</h2>
+                <ul id="about-item">
+                    <li id="about">Compatibility: It is compatible with smartphones, GoPro cameras, DSLRs, and compact cameras</li>
+                    <br>
+                    <br>
+                    <li id="about">Composition: Made with high-quality ABS materials the tripod is flexible and lightweight</li>
+                    <br>
+                    <br>
+                    <li id="about">Adjustable: As the product is flexible and bendable you can easily adjust its height, angle, and placement</li>
+                    <br>
+                    <br>
+                    <li id="about">Ideal choice: It can be placed on any surface without hampering its stability making it the ideal choice for adventure photography</li>
+                    <br>
+                    <br>
+                    <li id="about">Sturdy and strong: It can withstand a maximum weight of up to 1 kg</li>
+                    <br>
+                    <br>
+                    <!-- <li id="about">Its impeccable fit won't let you take these wonderfully amazing earphones off, fits you perfectly without hurting your ears and the perfect arc, with different size ear tips helps you in achieving superior comfort even with long listening hours.</li>
+                    <br>
+                    <br>
+                    <li id="about">1 year warranty from the date of purchase</li> -->
+                </ul>
+                <br>
+                <br>
+          </div>
+          
+        </center>
+            <div id="other-images">
+                <!-- <center>
+                    <img src="img/zebronics_mouse_5_1.jpg" alt="boatairdopeimage" id="last-images">
+                    <br>
+                    <br>
+                    <img src="img/zebronics_mouse_5_2.jpg" alt="boatairdopeimage" id="last-images">
+                    <br><br>
+                    <img src="img/zebronics_mouse_5_3.jpg" alt="boatairdopeimage" id="last-images">
+                </center> -->
+            </div>
+            
+        
+   
+</main>
+<footer>
+    <div>
+         <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+     </div>
+ </footer>
+ <!-- <script>  
+   function addToCart() {
+    var productName = document.getElementById("product-name").innerText;
+    console.log(productName);
+    var productPrice = document.getElementById("product-rate").innerText.trim(); // Ensure to trim any leading or trailing whitespace
+
+    // Extract the numerical value from the product price string
+    var priceRegex = /\d+(\.\d+)?/; // Regular expression to match a floating-point number
+    var match = productPrice.match(priceRegex);
+    if (match) {
+        productPrice = match[0]; // Retrieve the matched number
+    } else {
+        console.log("Price not found or invalid format");
+        return; // Exit function if price is not found or in invalid format
+    }
+
+    var formData = new FormData();
+    formData.append('productName', productName);
+    formData.append('productPrice', productPrice);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "addToCart.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send(formData);
+}
+
+
+</script> -->
+</body>
+
+
+</html>

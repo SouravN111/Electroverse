@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title> 
+		Blurred Background image in CSS 
+	</title> 
+    <link rel="stylesheet" href="signin.css">
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <script src= "https://code.jquery.com/jquery-3.5.0.js"> </script>
+    <script type="text/javascript">
+      window.history.forward();
+      function noBack()
+      {
+          window.history.forward();
+      }
+  </script>
+</head> 
+	
+<body> 
+	<div class="background"></div>
+    <center>
+        <div class="login-container">
+            <form action="login.php" method="post">
+                <h2 style="color: white;">Login</h2>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <button type="submit">Login</button>
+                <br><br>
+                <a href="signup.php" style="text-decoration: none; color: white;">Don't have an account?</a>
+            </form> 
+          </div> 
+    </center> 
+
+</body> 
+</html>
